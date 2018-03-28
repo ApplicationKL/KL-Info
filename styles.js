@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 
 const styles = StyleSheet.create({
-
+//e
   //MAIN LAYOUT
   container: {
     flex: 1,
