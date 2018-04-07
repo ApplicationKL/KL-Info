@@ -1,38 +1,52 @@
 import React, { Component } from 'react';
-import {StyleSheet, View, Text } from 'react-native';
+import {StyleSheet, View, Text, ScrollView } from 'react-native';
 
 //Native base
-import { Form, Item, Input, Label, Left, Right, Body, Card, CardItem, Picker, List, ListItem, CheckBox } from 'native-base';
+import {Icon, Form, Item, Input, Label, Left, Right, Body, Card, CardItem, List, ListItem, CheckBox, Button } from 'native-base';
 
 import styles from '../styles';
 
 
 
+import DatePicker from './DatePicker';
+import TimePicker from './TimePicker';
+import CategoryPicker from './CategoryPicker';
+
+
+
+
 class Task extends Component {
 
-    static navigationOptions = {
+    //Main navigation options
+    static navigationOptions = ({navigation}) => {
+
+    navOptions = navigation;
+    const {params = {} } = navigation.state;
+
+    return {
+
     drawerLabel: 'Task',
-    drawerLockMode: 'locked-closed'
-
-  };
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      selected5: "key2"
-    };
+    drawerLockMode: 'locked-closed',
+    headerLeft: (
+      <Button transparent> 
+        <Icon name="arrow-back" style={{fontSize: 26, color: 'white'}}/>
+      </Button>
+        
+      ),
+    headerRight: (
+      <Button transparent> 
+        <Icon name="checkmark" style={{fontSize: 40, color: 'white'}}/>
+      </Button>
+        
+      )
+    }
   }
-  onValueChange5(value: string) {
-    this.setState({
-      selected5: value
-    });
-  }
-
 
   render() {
+
     //const { navigate } = this.props.navigation;
     return (
-      <View>
+      <ScrollView>
 
         <Card style={styles.card}>
 
@@ -40,7 +54,7 @@ class Task extends Component {
 
              <Left>  
                 <Body>
-                  <Text>Primary tasks</Text>
+                  <Text style={styles.cardTopText}>Primary</Text>
                 </Body>
               </Left>
 
@@ -48,19 +62,19 @@ class Task extends Component {
 
           <CardItem>
 
-            <Body>   
+            <Body >   
                   
               <ListItem style={styles.item}>
-                <CheckBox checked={true} />
+                <CheckBox checked={true} color={'#F78233'} style={styles.checkBox}/>
                   <Body>
-                  <Text>Daily Stand Up</Text>
+                    <Text style={styles.formText}>Daily Stand Up</Text>
                   </Body>
               </ListItem>
 
-              <ListItem>
-                <CheckBox checked={false} />
+              <ListItem style={styles.item}>
+                <CheckBox checked={false} color={'#F78233'} style={styles.checkBox}/>
                 <Body>
-                  <Text>Discussion with Client</Text>
+                  <Text style={styles.formText}>Discussion with Client</Text>
                 </Body>
               </ListItem>
 
@@ -78,80 +92,68 @@ class Task extends Component {
 
              <Left>  
                 <Body>
-                  <Text>Additional task</Text>
+                  <Text style={styles.cardTopText}>Additional</Text>
                 </Body>
               </Left>
 
           </CardItem>
 
           <CardItem>
-
-              <Body>   
                   
-                <Form style={styles.item}>
-
-                  <Item floatingLabel>
-                     <Label >Name</Label>
-                     <Input />
-                  </Item>
-
-                  <Item floatingLabel>
-                     <Label >Desription</Label>
-                     <Input />
-                  </Item>
-
-              </Form>
-
-            </Body>
-
-          </CardItem>  
-
-        </Card>
-
-      
-
-        <Card style={styles.card}>
-          <CardItem>
-
-             <Left>  
-                <Body>
-                  <Text>Type</Text>
-                </Body>
-              </Left>
+            <Form>
+              <Item style={styles.itemAdditionalTask}>
+                <Icon name='browsers' />
+                <Input placeholder="Name" style={styles.formText}/>
+              </Item>
+ 
+    
+   
+            <Item style={styles.itemAdditionalTask}>
+              <Icon name='book' />
+              <Input placeholder="Note" style={styles.formText}/>
+            </Item>
+            </Form>
+            
 
           </CardItem>
 
+          <CardItem>
+            <Form>
+              <Item style={styles.itemCategory}>
+                <Icon name='list' style={styles.iconCategory} />
+                <Text style={styles.categoryText}>Category:</Text>
+              </Item>
+            </Form>  
+
+           <CategoryPicker/>
+
+          </CardItem>
 
           <CardItem>
-
-            <Body>   
-                  
-              <Form>
-
-                <Picker
-                  mode="dropdown"
-                  headerStyle={{ backgroundColor: "#024287" }}
-                  headerBackButtonTextStyle={{ color: "#fff" }}
-                  headerTitleStyle={{ color: "#fff" }}
-                  selectedValue={this.state.selected5}
-                  onValueChange={this.onValueChange5.bind(this)}
-                >
-              
-                <Item label="Cleaning" value="key0" />
-                <Item label="Salting" value="key1" />
-                <Item label="Apartments" value="key2" />
-                <Item label="Power Plant " value="key3" />
-                <Item label="Military" value="key4" />
-              </Picker>
-
+            <Form>
+              <Item style={styles.itemTime}>
+                <Icon name='calendar' />
+                <Text style={styles.categoryText}>Date:</Text>
+              </Item>
             </Form>
 
-            </Body>
+            <DatePicker/>
+          </CardItem>
 
-          </CardItem>    
+          <CardItem>
+            <Form>
+              <Item style={styles.itemTime}>
+                <Icon name='clock' />
+                <Text style={styles.categoryText}>Time:</Text>
+              </Item>
+            </Form>
+
+            <TimePicker/>
+          </CardItem>
+
         </Card>          
        
-      </View>
+      </ScrollView>
     );
   }
 }

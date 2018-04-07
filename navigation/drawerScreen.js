@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, ScrollView} from 'react-native';
 
 //Navigation 
 import {NavigationActions} from 'react-navigation';
@@ -21,6 +21,7 @@ export default class DrawerScreen extends Component {
     const navigateAction = NavigationActions.navigate({
       routeName: route
     });
+    
     this.props.navigation.dispatch(navigateAction);
   }
 
@@ -47,7 +48,7 @@ export default class DrawerScreen extends Component {
 	        			
 	        		</View>
 
-	        		<View style={styles.viewDrawer}>
+	        		<ScrollView style={styles.viewDrawer}>
 
 	        			<Button  full transparent onPress={this.navigateToScreen('Home')} style={styles.buttonDrawer}>
             				<Left><Icon name='home' style={styles.iconDrawer}/></Left>
@@ -89,7 +90,7 @@ export default class DrawerScreen extends Component {
             				<Right><Text style={styles.buttonDrawerText}>Account</Text></Right>            				
           				</Button>
 
-	        		</View>
+	        		</ScrollView>
 
       		</View>			
 

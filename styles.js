@@ -23,20 +23,115 @@ const styles = StyleSheet.create({
 
   },
 
+  
+
+
+  //TASK SCREEN
   card: {
     flex: 0,
     
     textAlign: 'center',
+    marginBottom: 0
+  },
+
+  cardType: {
+    flex: 0,
+    textAlign: 'center',
+    height: 235,
     marginBottom: 5
+
+  
+  },
+
+  taskButton: {
+    backgroundColor: '#F78233',
+    padding: 20,
+    marginTop: 20,
+    marginBottom: 0
+
   },
 
   item: {
     alignSelf: 'stretch',
-    width: 300
+    width: 300,
+    height: 35
 
   },
 
+  itemAdditionalTask: {
+    alignSelf: 'stretch',
+    marginBottom: 10,
+    width: 300,
+    height: 50,
+    marginLeft: 20
+  },
 
+  itemCategory: {
+    alignSelf: 'stretch',
+    marginBottom: 10,
+    height: 40,
+    marginLeft: 20,
+    marginRight: 37
+ 
+  },
+
+  itemTime: {
+    alignSelf: 'stretch',
+    marginBottom: 10,
+    width: 100,
+    height: 45,
+    marginLeft: 20,
+    marginRight: 0
+  },
+
+  iconCategory: {
+    marginRight: 2,
+    fontSize: 33
+  },
+
+  iconTime: {
+    fontSize: 26
+  },
+
+  buttonText: {
+    color: 'white',
+  },
+
+  checkBox: {
+    marginRight: 25,
+
+  },
+
+  formText: {
+    color: 'black',
+    fontSize: 16,
+    
+  },
+
+  cardTopText: {
+    color: '#black',
+    fontSize: 18,
+    paddingBottom: 0
+  },
+
+  categoryText: {
+    color: 'black',
+    fontSize: 16,
+    
+  },
+
+picker: {
+    alignSelf: 'stretch',
+    height: 15,
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    margin: 10,
+
+  },
+  pickerText: {
+    color: '#7E7D7D',
+    fontSize: 16
+  },
 
 
   //DRAWER SCREEN

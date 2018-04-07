@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import { TabNavigator, StackNavigator } from 'react-navigation';
+import { StyleSheet, View, Text, ScrollView } from 'react-native';
+import { TabNavigator, StackNavigator, NavigationActions } from 'react-navigation';
 
 //Native base
 import { Button, Icon } from 'native-base';
 
-//Screens
-import TaskScreen from '../component/TaskScreen';
-import MileageScreen from '../component/MileageScreen';
 
 //Styles
 import styles from '../styles';
@@ -17,9 +14,11 @@ import styles from '../styles';
 
 export default class HomeScreen extends Component {
 
+  navOption
+
   static navigationOptions = ({navigation}) => {
 
-    navOptions = navigation;
+    navOption = navigation;
     const {params = {} } = navigation.state;
 
     return {
@@ -34,13 +33,12 @@ export default class HomeScreen extends Component {
 
         </Button>
         
-          
-        )
+      )
     }
   }
 
   onHedearEventControl() {
-    const {params = {} } = navOptions.state;
+    const { params = {} } = navOption.state;
     params._openNav()
   }
 
@@ -56,15 +54,15 @@ export default class HomeScreen extends Component {
     this.props.navigation.navigate('DrawerOpen');
   }
 
-
   render() {
     const { navigate } = this.props.navigation;
+    
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         
-          <Text>Report home is empty</Text>
+          <Text>Report home is empty hvala</Text>
           <Text>Add activities from below or</Text>
-      </View>
+      </ScrollView>
 
     )
   }
