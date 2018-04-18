@@ -5,17 +5,17 @@ import {Body} from 'native-base';
 
 import styles from '../styles';
 
-export default class MyCategoryPicker extends Component {
+export default class MyProjcetPicker extends Component {
 
   //Category picker
   constructor(props, context) {
     super(props, context)
-    this.state = { category: 'cl'  }
+    this.state = { project: 'cl'  }
     this.onValueChange = this.handleValueChange.bind(this)
   }
 
-  handleValueChange(category) {
-    this.setState({ category })
+  handleValueChange(project) {
+    this.setState({ project })
   }
 
   render(){
@@ -24,19 +24,18 @@ export default class MyCategoryPicker extends Component {
 
     <Body>
       <Picker
-        selectedValue={this.state.category}
+        selectedValue={this.state.project}
         onValueChange={this.onValueChange}
-        prompt="Choose the category of your task"
+        prompt="Choose the project"
         style={styles.picker}
         textStyle={styles.pickerText}
         cancel
       >
 
-        <Picker.Item label="Cleaning" value="cl" />
-        <Picker.Item label="Salting" value="sl" />
-        <Picker.Item label="Apartments" value="ap" />
-        <Picker.Item label="Power Plant" value="pj" />
-        <Picker.Item label="Military" value="mj" />
+        <Picker.Item label="Project1" value="cl" />
+        <Picker.Item label="Project2" value="sl" />
+        <Picker.Item label="Project3" value="ap" />
+  
 
       </Picker>  
 

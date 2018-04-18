@@ -14,8 +14,6 @@ const styles = StyleSheet.create({
   },
 
 
-
-
   //COMPONENTS
   icon: {
     fontSize: 26, 
@@ -24,14 +22,27 @@ const styles = StyleSheet.create({
   },
 
   
+  //MILEAGE SCREEN
+  iconProject: {
+    fontSize: 25
+  },
 
+  itemProject: {
+    alignSelf: 'stretch',
+    marginBottom: 10,
+    height: 40,
+    width: 100,
+    marginLeft: 20,
+    marginRight: 40
+  },
 
   //TASK SCREEN
   card: {
-    flex: 0,
-    
+    flex: 1,
+   
     textAlign: 'center',
-    marginBottom: 0
+    marginBottom: 0,
+
   },
 
   cardType: {
@@ -63,7 +74,8 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     width: 300,
     height: 50,
-    marginLeft: 20
+  
+    
   },
 
   itemCategory: {
@@ -121,16 +133,15 @@ const styles = StyleSheet.create({
   },
 
 picker: {
-    alignSelf: 'stretch',
+    
     height: 15,
-    paddingHorizontal: 20,
-    paddingVertical: 12,
-    margin: 10,
+ 
 
   },
   pickerText: {
     color: '#7E7D7D',
-    fontSize: 16
+    fontSize: 16,
+
   },
 
 

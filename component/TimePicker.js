@@ -11,7 +11,7 @@ export default class MyTimePicker extends Component {
 
     return (
       <DatePicker
-        style={{width: 200}}
+        style={{width: 55}}
         date={this.state.date}
         showIcon={false}
         mode="time"

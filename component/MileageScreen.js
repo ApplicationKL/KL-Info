@@ -1,24 +1,86 @@
 import React, { Component } from 'react';
-import {StyleSheet, Text, View } from 'react-native';
 
+//React native
+import {StyleSheet, Text, View, ScrollView } from 'react-native';
+
+//Native base
+import {Icon, Form, Item, Input, Label, Left, Right, Body, Card, CardItem, List, ListItem, CheckBox, Button } from 'native-base';
+
+//Styles
 import styles from '../styles';
+
+//Pickers
+import DatePicker from './DatePicker';
+import ProjectPicker from './ProjectPicker';
 
 class Mileage extends Component {
 
-  static navigationOptions = {
-    drawerLabel: 'Mileage',
-    drawerLockMode: 'locked-closed'
+    //Main navigation options
+    static navigationOptions = ({navigation}) => {
 
-  };
+    navOptions = navigation;
+    const {params = {} } = navigation.state;
+
+    return {
+
+    drawerLabel: 'Mileage',
+    drawerLockMode: 'locked-closed',
+    headerLeft: (
+      <Button transparent> 
+        <Icon name="arrow-back" style={{fontSize: 26, color: 'white'}}/>
+      </Button>
+        
+      ),
+    headerRight: (
+      <Button transparent> 
+        <Icon name="checkmark" style={{fontSize: 40, color: 'white'}}/>
+      </Button>
+        
+      )
+    }
+  }
 
   render() {
-    const { navigate } = this.props.navigation;
     return (
-      <View style={styles.container}>
-        
-          <Text>MILEAGE</Text>
 
-      </View>
+      <ScrollView>  
+          
+        <Card style={styles.card}>
+
+          <CardItem>
+
+             <Left>  
+                <Body>
+                  <Text style={styles.cardTopText}>Primary</Text>
+                </Body>
+              </Left>
+
+          </CardItem>
+
+          <CardItem>
+
+            <Form>
+           
+              <Item style={styles.itemAdditionalTask}>
+                <Icon name='calendar' />
+                <Text style={styles.categoryText}>Date:</Text>
+                <DatePicker/>
+              </Item>
+     
+           
+              <Item style={styles.itemAdditionalTask}>
+                <Icon name='list-box' style={styles.iconProject} />
+                <Text style={styles.categoryText}>Project:</Text>
+                <ProjectPicker/>
+              </Item> 
+              
+            </Form>
+
+          </CardItem>
+
+        </Card>
+
+      </ScrollView>
 
     );
   }

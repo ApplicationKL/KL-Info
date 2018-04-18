@@ -11,7 +11,7 @@ export default class MyDatePicker extends Component {
 
     return (
       <DatePicker
-        style={{width: 200}}
+        style={{width: 95}}
         date={this.state.date}
         showIcon={false}
         mode="date"
