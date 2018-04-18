@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, ScrollView } from 'react-native';
 import { TabNavigator, StackNavigator, NavigationActions } from 'react-navigation';
+import CardTask from './CardTask.js';
 
 //Native base
 import { Button, Icon } from 'native-base';
@@ -8,8 +9,6 @@ import { Button, Icon } from 'native-base';
 
 //Styles
 import styles from '../styles';
-
-
 
 
 export default class HomeScreen extends Component {
@@ -58,10 +57,9 @@ export default class HomeScreen extends Component {
     const { navigate } = this.props.navigation;
     
     return (
-      <ScrollView style={styles.container}>
+      <ScrollView>
         
-          <Text>Report home is empty hvala</Text>
-          <Text>Add activities from below or</Text>
+         <CardTask/>
       </ScrollView>
 
     )

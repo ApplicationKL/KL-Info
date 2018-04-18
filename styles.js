@@ -45,6 +45,11 @@ const styles = StyleSheet.create({
 
   },
 
+  cardTask: {
+    width: 350, 
+    alignSelf: 'center'
+  },
+
   cardType: {
     flex: 0,
     textAlign: 'center',
