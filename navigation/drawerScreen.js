@@ -32,62 +32,52 @@ export default class DrawerScreen extends Component {
 
 		return (
 
-			<View style={styles.containerDrawer}>
-        
-	        
+			<View style={{flex: 1}}>
 
 	        		<View style={styles.viewDrawerProfile}>
 	        			<Avatar
   							large
   							rounded
   							icon={{name: 'person'}}
- 							onPress={() => console.log("Works!")}
+ 							  onPress={() => console.log("Works!")}
   							activeOpacity={0.7}
   							containerStyle={styles.profileIconDrawer}
-						/>
-	        			
+						    />	
 	        		</View>
 
-	        		<ScrollView style={styles.viewDrawer}>
+	        		<ScrollView>
 
-	        			<Button  full transparent onPress={this.navigateToScreen('Home')} style={styles.buttonDrawer}>
+	        			<Button  full transparent onPress={this.navigateToScreen('Home')} style={styles.drawerMenutItem}>
             				<Left><Icon name='home' style={styles.iconDrawer}/></Left>
-            				<Right><Text style={styles.buttonDrawerText}>Home</Text></Right>            				
+            				<Right><Text style={styles.drawerMenutItemText}>Home</Text></Right>            				
           				</Button>
 
-          				<Divider style={{ height: 1, backgroundColor: '#F2F2F2' }} />
+          				<Divider style={styles.divider} />
 
-          				<Button   full transparent onPress={this.navigateToScreen('Notification')} style={styles.buttonDrawer}>
+          				<Button   full transparent onPress={this.navigateToScreen('Notification')} style={styles.drawerMenutItem}>
             				<Left><Icon name="notifications" style={styles.iconDrawer}/></Left>
-            				<Right><Text style={styles.buttonDrawerText}>Notification</Text></Right>          				
+            				<Right><Text style={styles.drawerMenutItemText}>Notification</Text></Right>          				
           				</Button>
 
-          				<Divider style={{ height: 1, backgroundColor: '#F2F2F2' }} />
+          				<Divider style={styles.divider} />
 
-          				<Button  iconLeft full transparent onPress={this.navigateToScreen('Projects')} style={styles.buttonDrawer}>
+          				<Button  iconLeft full transparent onPress={this.navigateToScreen('Projects')} style={styles.drawerMenutItem}>
             				<Left><Icon name='albums' style={styles.iconDrawer}/></Left>
-            				<Right><Text style={styles.buttonDrawerText}>Projects</Text></Right>            				
+            				<Right><Text style={styles.drawerMenutItemText}>Projects</Text></Right>            				
           				</Button>
 
-          				<Divider style={{ height: 1, backgroundColor: '#F2F2F2' }} />
+          				<Divider style={styles.divider} />
 
-          				<Button  iconLeft full transparent onPress={this.navigateToScreen('DayReport')} style={styles.buttonDrawer}>
+          				<Button  iconLeft full transparent onPress={this.navigateToScreen('DayReport')} style={styles.drawerMenutItem}>
             				<Left><Icon name='timer' style={styles.iconDrawer}/></Left>
-            				<Right><Text style={styles.buttonDrawerText}>Daily report</Text></Right>            				
+            				<Right><Text style={styles.drawerMenutItemText}>Report</Text></Right>            				
           				</Button>
 
-          				<Divider style={{ height: 1, backgroundColor: '#F2F2F2' }} />
+          				<Divider style={styles.divider} />
 
-          				<Button  iconLeft full transparent onPress={this.navigateToScreen('WeekReport')} style={styles.buttonDrawer}>
-            				<Left><Icon name='time' style={styles.iconDrawer}/></Left>
-            				<Right><Text style={styles.buttonDrawerText}>Weekly report</Text></Right>            				
-          				</Button>
-
-          				<Divider style={{ height: 1, backgroundColor: '#F2F2F2' }} />
-
-          				<Button  iconLeft full transparent onPress={this.navigateToScreen('Account')} style={styles.buttonDrawer}>
+          				<Button  iconLeft full transparent onPress={this.navigateToScreen('Account')} style={styles.drawerMenutItem}>
             				<Left><Icon name='person' style={styles.iconDrawer}/></Left>
-            				<Right><Text style={styles.buttonDrawerText}>Account</Text></Right>            				
+            				<Right><Text style={styles.drawerMenutItemText}>Account</Text></Right>            				
           				</Button>
 
 	        		</ScrollView>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, ScrollView } from 'react-native';
+import { StyleSheet, View, Text, ScrollView, FlatList } from 'react-native';
 import { TabNavigator, StackNavigator, NavigationActions } from 'react-navigation';
 import CardTask from './CardTask.js';
 
@@ -57,10 +57,14 @@ export default class HomeScreen extends Component {
     const { navigate } = this.props.navigation;
     
     return (
-      <ScrollView>
-        
-         <CardTask/>
-      </ScrollView>
+
+      <View style={styles.container}>
+        <ScrollView >
+          <CardTask/> 
+        </ScrollView>
+      </View>
+
+      
 
     )
   }

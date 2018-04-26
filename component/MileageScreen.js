@@ -42,10 +42,11 @@ class Mileage extends Component {
 
   render() {
     return (
+      <View style={styles.container}>
 
       <ScrollView>  
           
-        <Card style={styles.card}>
+        <Card>
 
           <CardItem>
 
@@ -61,14 +62,14 @@ class Mileage extends Component {
 
             <Form>
            
-              <Item style={styles.itemAdditionalTask}>
+              <Item style={styles.itemTask}>
                 <Icon name='calendar' />
                 <Text style={styles.categoryText}>Date:</Text>
                 <DatePicker/>
               </Item>
      
            
-              <Item style={styles.itemAdditionalTask}>
+              <Item style={styles.itemATask}>
                 <Icon name='list-box' style={styles.iconProject} />
                 <Text style={styles.categoryText}>Project:</Text>
                 <ProjectPicker/>
@@ -81,6 +82,8 @@ class Mileage extends Component {
         </Card>
 
       </ScrollView>
+      </View>
+
 
     );
   }

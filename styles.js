@@ -4,17 +4,14 @@ import {
 } from 'react-native';
 
 const styles = StyleSheet.create({
-//e
+  
   //MAIN LAYOUT
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  
+
   },
 
 
-  //COMPONENTS
   icon: {
     fontSize: 26, 
     color: 'white'
@@ -36,19 +33,13 @@ const styles = StyleSheet.create({
     marginRight: 40
   },
 
-  //TASK SCREEN
-  card: {
-    flex: 1,
-   
-    textAlign: 'center',
-    marginBottom: 0,
+  //TASK SCREEM
+  addButtonText: {
+        color: '#F78233',
+        fontSize: 35, 
+        marginLeft: 210,
 
-  },
-
-  cardTask: {
-    width: 350, 
-    alignSelf: 'center'
-  },
+    },
 
   cardType: {
     flex: 0,
@@ -67,20 +58,19 @@ const styles = StyleSheet.create({
 
   },
 
-  item: {
-    alignSelf: 'stretch',
-    width: 300,
-    height: 35
-
-  },
-
-  itemAdditionalTask: {
+  itemTask: {
     alignSelf: 'stretch',
     marginBottom: 10,
     width: 300,
     height: 50,
-  
     
+  },
+
+  itemTaskPrimary: {
+    alignSelf: 'stretch',
+    width: 300,
+    height: 35
+
   },
 
   itemCategory: {
@@ -151,18 +141,7 @@ picker: {
 
 
   //DRAWER SCREEN
-  viewDrawer: {
-    height: 100, 
-    backgroundColor: 'F2F2F2',
-    marginBottom: 10
-  },
 
-
-  containerDrawer: {
-    flex: 1,
-    flexDirection: 'column'
-        
-  },
 
   viewDrawerProfile: {
     height: 150, 
@@ -177,7 +156,7 @@ picker: {
     alignItems: 'left'
   },
 
-  buttonDrawer: {
+  drawerMenutItem: {
     alignSelf: 'stretch',
     marginLeft: 50,
     marginRight: 50,
@@ -186,7 +165,7 @@ picker: {
  
   },
 
-  buttonDrawerText: {
+  drawerMenutItemText: {
       color: 'black',
       alignSelf: 'center',
       fontSize: 16,
@@ -197,7 +176,12 @@ picker: {
     marginLeft: 50,
     marginTop: 50,
     color: 'white'
-  }
+  },
+
+  divider: {
+    height: 1, 
+    backgroundColor: '#F2F2F2'
+  },
 
 
 });

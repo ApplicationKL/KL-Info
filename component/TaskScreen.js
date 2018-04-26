@@ -42,110 +42,81 @@ class Task extends Component {
 
     render() {
 
-    //const { navigate } = this.props.navigation;
     return (
-        <ScrollView>
-       
-            <Card style={styles.card}>
-
-                <CardItem>
-
-                    <Left>  
-                        
-                        <Body>
-                            
+        <View style={styles.conntainer}>
+         <ScrollView>
+            <Card>
+               <CardItem>
+                  <Left>                          
+                        <Body>  
                             <Text style={styles.cardTopText}>Primary</Text>
-                        
                         </Body>
-                    
                     </Left>
-
                 </CardItem>
 
                 <CardItem>
-
                     <Body >   
-
-                        <ListItem style={styles.item}>
-      
-                            <CheckBox checked={true} color={'#F78233'} style={styles.checkBox}/>
-                                
-                                <Body>
-                                    
-                                    <Text style={styles.formText}>Daily Stand Up</Text>
-                                </Body>
-
-                        </ListItem>
-
-                        <ListItem style={styles.item}>
-                            
-                            <CheckBox checked={false} color={'#F78233'} style={styles.checkBox}/>
-                        
-                            <Body>
-                                
-                                <Text style={styles.formText}>Discussion with Client</Text>
-                            
+                        <ListItem style={styles.itemTaskPrimary}>
+                            <CheckBox checked={true} color={'#F78233'} style={styles.checkBox}/>     
+                            <Body>     
+                                <Text style={styles.formText}>Daily Stand Up</Text>
                             </Body>
-                        
                         </ListItem>
 
+                        <ListItem style={styles.itemTaskPrimary}>
+                            <CheckBox checked={false} color={'#F78233'} style={styles.checkBox}/>
+                            <Body>
+                                <Text style={styles.formText}>Discussion with Client</Text>  
+                            </Body>
+                        </ListItem>
                     </Body>
-
                 </CardItem>  
 
             </Card>
 
-            <Card style={styles.card}>
-
+            <Card>
                 <CardItem>
-
-                    <Left>  
-                        
+                    <Left>                       
                         <Body>
-      
-                            <Text style={styles.cardTopText}>Additional</Text>
-                        
-                        </Body>
-      
+                          <Text style={styles.cardTopText}>Additional</Text>                        
+                        </Body>     
                     </Left>
-
                 </CardItem>
 
                 <CardItem>
-
                     <Form>
                     
-                        <Item style={styles.itemAdditionalTask}>
+                        <Item >
                             <Icon name='browsers' />
                             <Input placeholder="Name" style={styles.formText}/>
                         </Item>
       
-                        <Item style={styles.itemAdditionalTask}>
+                        <Item>
                             <Icon name='book' />
                             <Input placeholder="Note" style={styles.formText}/>
                         </Item>
 
-                        <Item style={styles.itemAdditionalTask}>
+                        <Item style={styles.itemTask}>
                             <Icon name='list' style={styles.iconCategory} />
                             <CategoryPicker/>
                         </Item>
 
-                        <Item style={styles.itemAdditionalTask}>
+                        <Item style={styles.itemTask}>
                             <Icon name='calendar' />
                             <DatePicker/>
                         </Item>
 
-                        <Item style={styles.itemAdditionalTask}>
+                        <Item style={styles.itemTask}>
                             <Icon name='clock' />
                             <TimePicker/>
                         </Item>
                     </Form>
-
                 </CardItem>
-
             </Card>          
-
         </ScrollView>
+        </View>
+       
+
     );
 }
 }
