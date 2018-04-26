@@ -62,6 +62,7 @@ export default class HomeScreen extends Component {
         <ScrollView >
           <CardTask/> 
           <Text>Frontend is the new Master!</Text>
+           <Text>Frontend is the new Master!</Text>
         </ScrollView>
       </View>
 
