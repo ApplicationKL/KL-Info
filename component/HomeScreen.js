@@ -2,14 +2,9 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Text, ScrollView, FlatList } from 'react-native';
 import { TabNavigator, StackNavigator, NavigationActions } from 'react-navigation';
 import CardTask from './CardTask.js';
-
-//Native base
+import CurrentDate from './CurrentDate.js';
 import { Button, Icon } from 'native-base';
-
-
-//Styles
 import styles from '../styles';
-
 
 export default class HomeScreen extends Component {
 
@@ -32,6 +27,11 @@ export default class HomeScreen extends Component {
 
         </Button>
         
+      ),
+
+      headerRight: 
+      (
+         <CurrentDate/>
       )
     }
   }
@@ -58,7 +58,7 @@ export default class HomeScreen extends Component {
     
     return (
 
-      <View style={styles.container}>
+      <View>
         <ScrollView >
           <CardTask/> 
         </ScrollView>
@@ -71,68 +71,3 @@ export default class HomeScreen extends Component {
 }
 
 
-/*export default StackNav = TabNavigator ({
-  Home: {
-    screen: HomeScreen,
-    navigationOptions: ()=> ({
-      tabBarLabel: 'Home',
-      title: 'Home',
-      tabBarIcon: ({ tintColor }) => (<Icon name='ios-home' style= {styles.icon} />),
-      headerTintColor: 'white',
-      headerStyle: {
-        backgroundColor: '#024287',
-        elevation: 0,
-        shadowOpacity: 0 
-      }
-         
-      })
-    
-  },
-
-  TaskScreen: {
-    screen: TaskScreen,
-    navigationOptions: ()=> ({
-      tabBarLabel: 'Task',
-      title: 'Task',
-      tabBarIcon: ({ tintColor }) => (<Icon name='logo-buffer' style= {styles.icon} />),
-      headerTintColor: 'white',
-      headerStyle: {
-        backgroundColor: '#024287',
-        elevation: 0,
-        shadowOpacity: 0
-      }
-      
-     
-      })
-    
-  },
-
-  MileageScreen: {
-    screen: MileageScreen,
-    navigationOptions: ()=> ({
-      title: 'Mileage',
-      tabBarIcon: ({ tintColor }) => (<Icon name='ios-jet'  style= {styles.icon} />),
-      headerTintColor: 'white',
-      headerStyle: {
-        backgroundColor: '#024287',
-        elevation: 0,
-        shadowOpacity: 0
-       }
-     
-    })
-
-  }
-    
-  }, {
-
-    tabBarOptions: {
-      showIcon: true,
-      inactiveTintColor: 'white',
-      activeTintColor: '#F78233',
-      
-      style: {
-        backgroundColor: '#024287'
-      },
-    }
-
-});*/

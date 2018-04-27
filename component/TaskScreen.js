@@ -46,35 +46,6 @@ class Task extends Component {
         <View style={styles.conntainer}>
          <ScrollView>
             <Card>
-               <CardItem>
-                  <Left>                          
-                        <Body>  
-                            <Text style={styles.cardTopText}>Primary</Text>
-                        </Body>
-                    </Left>
-                </CardItem>
-
-                <CardItem>
-                    <Body >   
-                        <ListItem style={styles.itemTaskPrimary}>
-                            <CheckBox checked={true} color={'#F78233'} style={styles.checkBox}/>     
-                            <Body>     
-                                <Text style={styles.formText}>Daily Stand Up</Text>
-                            </Body>
-                        </ListItem>
-
-                        <ListItem style={styles.itemTaskPrimary}>
-                            <CheckBox checked={false} color={'#F78233'} style={styles.checkBox}/>
-                            <Body>
-                                <Text style={styles.formText}>Discussion with Client</Text>  
-                            </Body>
-                        </ListItem>
-                    </Body>
-                </CardItem>  
-
-            </Card>
-
-            <Card>
                 <CardItem>
                     <Left>                       
                         <Body>

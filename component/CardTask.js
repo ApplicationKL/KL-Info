@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, TextInput, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, TextInput, ScrollView} from 'react-native';
 import { TabNavigator, StackNavigator, NavigationActions } from 'react-navigation';
-
-//Native base
-import {Icon, Form, Item, Input, Label, Left, Right, Body, Card, CardItem, List, ListItem, CheckBox, Button } from 'native-base';
-
-//Task
+import {Icon, Form, Item, Input, Label, Left, Right, Body, Card, CardItem, List, ListItem, Button } from 'native-base';
 import Task from './Task.js';
-
-//Styles
 import styles from '../styles';
 
 
@@ -41,6 +35,8 @@ export default class CardTask extends Component {
       taskArray: [],
       taskText: '',
     };
+
+   this.addtask =  this.addtask.bind(this)
   }
 
   render() {
@@ -54,16 +50,16 @@ export default class CardTask extends Component {
       <View>
 
           <Card>              
-
                 <CardItem>
-                  <TextInput
+                  <Input
                     placeholder ='Add task..'
                     onChangeText={(taskText)=> this.setState({taskText})}
                     value={this.state.taskText}>
-                  </TextInput>
-                  <TouchableOpacity onPress={ this.addtask.bind(this) }>
-                    <Text style={styles.addButtonText}> + </Text>
-                  </TouchableOpacity>
+                  </Input>
+                  
+                  <Button transparent light onPress={this.addtask}>
+                    <Text style={styles.addButtonText}>+</Text>
+                  </Button> 
                 </CardItem>
 
                 <CardItem>
@@ -81,10 +77,6 @@ export default class CardTask extends Component {
     );
   }
 
-  addCard(){
-
-  }
-
   addtask()
     {
         if(this.state.taskText){
@@ -92,6 +84,7 @@ export default class CardTask extends Component {
               
                 'task': this.state.taskText,
             });
+
             this.setState({taskArray: this.state.taskArray }),
             this.setState({taskText:''});
         }

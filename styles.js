@@ -5,12 +5,16 @@ import {
 
 const styles = StyleSheet.create({
   
-  //MAIN LAYOUT
+
   container: {
     flex: 1,
-
   },
 
+  text: {
+    fontSize: 18,
+    color: "white",
+    marginRight: 10
+  },
 
   icon: {
     fontSize: 26, 
@@ -18,8 +22,7 @@ const styles = StyleSheet.create({
 
   },
 
-  
-  //MILEAGE SCREEN
+
   iconProject: {
     fontSize: 25
   },
@@ -33,7 +36,7 @@ const styles = StyleSheet.create({
     marginRight: 40
   },
 
-  //TASK SCREEM
+
   addButtonText: {
         color: '#F78233',
         fontSize: 35, 
@@ -118,7 +121,6 @@ const styles = StyleSheet.create({
   cardTopText: {
     color: '#black',
     fontSize: 18,
-    paddingBottom: 0
   },
 
   categoryText: {
@@ -127,7 +129,7 @@ const styles = StyleSheet.create({
     
   },
 
-picker: {
+  picker: {
     
     height: 15,
  
@@ -139,10 +141,13 @@ picker: {
 
   },
 
+  currentDate: {
+    alignSelf: 'flex-start',
+    margin: 15,
+
+  },
 
   //DRAWER SCREEN
-
-
   viewDrawerProfile: {
     height: 150, 
     backgroundColor: '#024287',
